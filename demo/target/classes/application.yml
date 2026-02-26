@@ -1,0 +1,36 @@
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: "email@gmail.com"
+    password: "password"
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/registration
+    username: postgres
+    password: parola_ta
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
