@@ -71,6 +71,8 @@ mvn spring-boot:run
 ```
 The application will start on http://localhost:8080.
 
+---
+
 ## Usage
 
 ### Job Pages:
@@ -93,29 +95,32 @@ The application will start on http://localhost:8080.
 
 /req/signup/verify?token=<JWT> – Email verification
 ```
+
+---
+
 ## Notes
 
-JobRepo currently uses in-memory storage for demonstration purposes. Replace with JPA repositories for production.
+- JobRepo currently uses in-memory storage for demonstration purposes. Replace with JPA repositories for production.
 
-Email sending requires SMTP configuration in application.properties.
+- Email sending requires SMTP configuration in application.properties.
 
-JSP and Thymeleaf templates coexist; JSP views are configured via JspConfig.java.
+- JSP and Thymeleaf templates coexist; JSP views are configured via JspConfig.java.
 
-Security features include password hashing, JWT verification, and CSRF disabled only for development.
+- Security features include password hashing, JWT verification, and CSRF disabled only for development.
 
 ## Maven Dependencies
 
-Key dependencies in pom.xml:
+#### Key dependencies in pom.xml:
 
-Spring Boot starters: web, data-jpa, security, thymeleaf, mail, test
+- Spring Boot starters: web, data-jpa, security, thymeleaf, mail, test
 
-PostgreSQL driver
+- PostgreSQL driver
 
-JWT (io.jsonwebtoken)
+- JWT (io.jsonwebtoken)
 
-JSP and JSTL support
+- JSP and JSTL support
 
-Lombok
+-Lombok
 
 ## Author
 
