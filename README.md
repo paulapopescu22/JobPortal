@@ -1,4 +1,4 @@
-# Job Portal Web Application
+# Job Portal
 
 ## Description
 
