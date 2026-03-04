@@ -1,4 +1,4 @@
-# Job Management Web Application - Spring Boot Project
+# Job Portal Web Application
 
 ## Description
 
@@ -88,6 +88,7 @@ The application will start on http://localhost:8080.
 ```
 
 ### Authentication Pages:
+
 ```sh
 /req/signup – JSON POST for registration
 
@@ -120,7 +121,7 @@ The application will start on http://localhost:8080.
 
 - JSP and JSTL support
 
--Lombok
+- Lombok
 
 ## Author
 
