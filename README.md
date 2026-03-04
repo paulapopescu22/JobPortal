@@ -120,5 +120,4 @@ Lombok
 ## Author
 
 - Popescu Paula-Marta
-git clone https://github.com/yourusername/job-management-spring.git
-cd job-management-spring
+
