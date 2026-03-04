@@ -57,3 +57,68 @@ The project is currently **in progress** and demonstrates modern backend develop
 ```sh
 git clone https://github.com/yourusername/job-management-spring.git
 cd job-management-spring
+```
+### 2. Build the project
+
+```sh
+mvn clean install
+```
+
+### 3. Run the Spring Boot application
+
+```sh
+mvn spring-boot:run
+```
+The application will start on http://localhost:8080.
+
+## Usage
+
+### Job Pages:
+
+```sh
+/homePage – Homepage
+
+/addJob – Add a new job
+
+/viewAllJobs – View all jobs
+
+/searchJobs?keyword=java – Search jobs by keyword
+```
+
+### Authentication Pages:
+```sh
+/req/signup – JSON POST for registration
+
+/req/login – Login page
+
+/req/signup/verify?token=<JWT> – Email verification
+```
+## Notes
+
+JobRepo currently uses in-memory storage for demonstration purposes. Replace with JPA repositories for production.
+
+Email sending requires SMTP configuration in application.properties.
+
+JSP and Thymeleaf templates coexist; JSP views are configured via JspConfig.java.
+
+Security features include password hashing, JWT verification, and CSRF disabled only for development.
+
+## Maven Dependencies
+
+Key dependencies in pom.xml:
+
+Spring Boot starters: web, data-jpa, security, thymeleaf, mail, test
+
+PostgreSQL driver
+
+JWT (io.jsonwebtoken)
+
+JSP and JSTL support
+
+Lombok
+
+## Author
+
+- Popescu Paula-Marta
+git clone https://github.com/yourusername/job-management-spring.git
+cd job-management-spring
