@@ -4,8 +4,6 @@
 
 This is a **professional web application** built using **Spring Boot**, designed to manage job postings and user authentication. The application allows users to add, view, and search for jobs, while providing secure registration and email verification workflows.  
 
-The project is currently **in progress** and demonstrates modern backend development practices, enterprise-ready features, and secure workflows.
-
 ---
 
 ## Features
