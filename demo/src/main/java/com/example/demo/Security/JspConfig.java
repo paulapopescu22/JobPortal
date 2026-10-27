@@ -15,7 +15,7 @@ public class JspConfig {
         resolver.setSuffix(".jsp");             // toate JSP-urile au extensia .jsp
         resolver.setOrder(10);                  // prioritate mai mica decat Thymeleaf
         
-        resolver.setViewNames("homePage*", "addJob*", "viewAllJobs*", "success*"); 
+        resolver.setViewNames("homePage*", "addJob*", "viewAllJobs*", "success*", "profile*");
 
         return resolver;
     }

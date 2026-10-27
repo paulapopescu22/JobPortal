@@ -20,75 +20,44 @@ body{
 	font-family:'Poppins',sans-serif;
 	min-height:100vh;
 	margin:0;
-	color:#e8eefc;
-	background: linear-gradient(135deg,#0b1e3a,#08162c 70%);
-	scroll-behavior:smooth;
-	position:relative;
-}
-
-/* ===== GLOW FUNDAL ===== */
-body::before{
-	content:"";
-	position:fixed;
-	width:140%;
-	height:140%;
-	background:linear-gradient(
-		120deg,
-		transparent 20%,
-		rgba(46,213,115,0.2),
-		rgba(0,140,255,0.15),
-		transparent 80%
-	);
-	filter:blur(80px);
-	animation:moveGlow 15s linear infinite;
-	z-index:0;
-}
-@keyframes moveGlow{
-	from{transform:translateX(-20%) translateY(-10%) rotate(0deg);}
-	to{transform:translateX(20%) translateY(10%) rotate(360deg);}
+	color:#0f172a;
+	background:#f8fafc;
 }
 
 /* ===== NAVBAR ===== */
 .navbar{
-	background:#08162c !important;
-	box-shadow:0 4px 18px rgba(0,0,0,0.45);
-	border-bottom:3px solid #27ae60; /* linia verde jos */
-	position:relative;
-	z-index:1;
+	background:#ffffff !important;
+	border-bottom:1px solid #e2e8f0;
 }
 .navbar-brand{
-	color:#27ae60 !important;
+	color:#0f172a !important;
 	font-weight:700;
-	letter-spacing:1px;
+	letter-spacing:0.5px;
 }
 .nav-link{
-	color:#bcd0ff !important;
+	color:#64748b !important;
 	font-weight:500;
 }
 .nav-link:hover{
-	color:#27ae60 !important;
+	color:#3b82f6 !important;
 }
 
 /* ===== WRAPPER ===== */
 .wrapper{
 	margin-top:90px;
-	position:relative;
-	z-index:1;
 }
 
-/* ===== GLASS CARD ===== */
+/* ===== CARD ===== */
 .card{
-	border:none;
 	border-radius:18px;
 	padding:40px 30px;
-	background:linear-gradient(145deg,#0f2a52,#08162c);
-	box-shadow:0 10px 30px rgba(0,0,0,0.45);
-	transition:all .25s ease;
-	color:#e8eefc;
+	background:#ffffff;
+	border:1px solid #e2e8f0;
+	transition:border-color .25s ease;
+	color:#0f172a;
 }
 .card:hover{
-	transform:translateY(-6px);
-	box-shadow:0 18px 45px rgba(0,0,0,0.55), 0 0 20px rgba(46,213,115,0.2);
+	border-color:#3b82f6;
 }
 
 /* ===== CARD TITLE ===== */
@@ -96,44 +65,47 @@ body::before{
 	font-weight:700;
 	text-align:center;
 	margin-bottom:30px;
+	color:#0f172a;
 }
 
 /* ===== FORM INPUT ===== */
 .form-control, .form-select, textarea{
 	border-radius:10px;
-	background:#0f2a52;
-	border:none;
-	color:#fff;
+	background:#f8fafc;
+	border:1px solid #e2e8f0;
+	color:#0f172a;
 	padding:12px;
 }
 
 .form-control::placeholder{
-	color:#bcd0ff;
+	color:#94a3b8;
 }
 
 .form-control:focus, .form-select:focus, textarea:focus{
-	background:#0f2a52;
-	color:#fff;
+	background:#f8fafc;
+	color:#0f172a;
 	outline:none;
-	border:1px solid #27ae60;
-	box-shadow:0 0 10px rgba(46,213,115,0.4);
+	border:1px solid #3b82f6;
+}
+
+label{
+	color:#334155;
+	font-weight:500;
 }
 
 /* ===== BUTTON ===== */
 .btn-main{
-	background:linear-gradient(135deg,#27ae60,#1abc9c);
+	background:linear-gradient(135deg,#1d4ed8,#3b82f6);
 	border:none;
 	border-radius:10px;
 	padding:12px 26px;
 	font-weight:600;
 	color:#fff;
-	transition:all 0.3s ease;
+	transition:all 0.2s ease;
 }
 
 .btn-main:hover{
-	background:linear-gradient(135deg,#2ed573,#1abc9c);
-	transform:translateY(-2px);
-	box-shadow:0 10px 20px rgba(46,213,115,0.3);
+	background:linear-gradient(135deg,#3b82f6,#60a5fa);
 }
 </style>
 </head>
@@ -148,6 +120,8 @@ body::before{
 <ul class="navbar-nav ms-auto">
 <li class="nav-item"><a class="nav-link" href="/homePage">Home</a></li>
 <li class="nav-item"><a class="nav-link" href="/viewAllJobs">All Jobs</a></li>
+<li class="nav-item"><a class="nav-link" href="/profile">Profil</a></li>
+<li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
 </ul>
 </div>
 </div>

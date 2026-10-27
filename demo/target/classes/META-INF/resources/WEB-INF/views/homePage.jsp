@@ -7,7 +7,6 @@
 <title>Job Portal</title>
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 <link rel="icon" type="image/png" href="/images/favicon.png">
 
 <style>
@@ -16,74 +15,82 @@
 /* ===== BASE ===== */
 body{
     font-family:'Poppins',sans-serif;
-    background:linear-gradient(135deg,#071427,#020617 70%);
-    color:#e6ecff;
+    background:#f8fafc;
+    color:#0f172a;
     margin:0;
 }
 
 /* ===== NAVBAR ===== */
 .navbar{
-    background:rgba(10,25,47,0.85) !important;
-    backdrop-filter:blur(12px);
-    border-bottom:1px solid rgba(46,213,115,0.25);
+    background:#ffffff !important;
+    border-bottom:1px solid #e2e8f0;
+    position:sticky;
+    top:0;
+    z-index:10;
 }
 
 .navbar-brand{
     font-weight:700;
-    color:#2ed573 !important;
-    letter-spacing:1px;
+    color:#0f172a !important;
+    letter-spacing:0.5px;
 }
 
 .nav-link{
-    color:#9fb0ff !important;
+    color:#64748b !important;
+    font-weight:500;
+    transition:color .2s ease;
 }
 .nav-link:hover{
-    color:#2ed573 !important;
+    color:#3b82f6 !important;
 }
 
 /* ===== HERO ===== */
+.badge-tech{
+    display:block;
+    text-align:center;
+    font-size:0.8rem;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:#3b82f6;
+    margin-top:70px;
+}
+
 .main-title{
     text-align:center;
-    margin-top:80px;
+    margin-top:12px;
     font-size:3rem;
     font-weight:700;
+    color:#0f172a;
 }
 
 .subtitle{
     text-align:center;
-    color:#8af5c5;
+    color:#64748b;
     margin-bottom:40px;
 }
 
-/* ===== GLASS CARD ===== */
+/* ===== CARD ===== */
 .glass{
-    background:rgba(255,255,255,0.04);
-    backdrop-filter:blur(10px);
-    border:1px solid rgba(46,213,115,0.18);
+    background:#ffffff;
+    border:1px solid #e2e8f0;
     border-radius:16px;
     padding:30px;
-    transition:0.25s ease;
-}
-
-.glass:hover{
-    transform:translateY(-6px);
-    border:1px solid rgba(46,213,115,0.45);
 }
 
 /* ===== BUTTON ===== */
 .btn-main{
-    background:linear-gradient(135deg,#27ae60,#2ed573);
+    background:linear-gradient(135deg,#1d4ed8,#3b82f6);
     border:none;
     padding:12px 26px;
     border-radius:10px;
     color:white;
     font-weight:600;
-    transition:0.25s;
+    transition:0.2s ease;
 }
 
 .btn-main:hover{
-    background:linear-gradient(135deg,#2ed573,#27ae60);
-    transform:translateY(-2px);
+    background:linear-gradient(135deg,#3b82f6,#60a5fa);
 }
 
 /* ===== SEARCH ===== */
@@ -93,27 +100,26 @@ body{
 }
 
 .form-control{
-    background:#0c1f3d;
-    border:1px solid rgba(46,213,115,0.25);
-    color:white;
+    background:#ffffff;
+    border:1px solid #e2e8f0;
+    color:#0f172a;
     border-radius:10px;
     padding:14px;
 }
 
 .form-control:focus{
-    border-color:#2ed573;
-    box-shadow:0 0 0 0.2rem rgba(46,213,115,0.15);
+    border-color:#3b82f6;
 }
 
 /* ===== STATS ===== */
 .stat-number{
     font-size:2rem;
     font-weight:700;
-    color:#2ed573;
+    color:#3b82f6;
 }
 
 .stat-label{
-    color:#9fb0ff;
+    color:#64748b;
 }
 
 /* ===== SECTION ===== */
@@ -121,19 +127,39 @@ body{
     font-weight:600;
     margin-bottom:25px;
 }
+
+/* ===== FOOTER ===== */
+footer{
+    margin-top:90px;
+    padding:28px 0;
+    text-align:center;
+    color:#94a3b8;
+    font-size:0.85rem;
+    border-top:1px solid #e2e8f0;
+}
+footer span{
+    color:#3b82f6;
+    font-weight:600;
+}
 </style>
 </head>
 
 <body>
 
 <nav class="navbar navbar-expand-lg">
-<div class="container">
-<a class="navbar-brand" href="/homePage">JOB PORTAL</a>
+<div class="container d-flex justify-content-between align-items-center">
+<a class="navbar-brand" href="/homePage">JOBPORTAL</a>
 
-
+<div class="d-flex align-items-center gap-4">
+<a class="nav-link d-none d-md-inline" href="/viewAllJobs">Joburi</a>
+<a class="nav-link d-none d-md-inline" href="/addJob">Adaugă Job</a>
+<a class="nav-link d-none d-md-inline" href="/profile">Profil</a>
+<a class="nav-link" href="/logout">Logout</a>
+</div>
 </div>
 </nav>
 
+<span class="badge-tech">Autentificare reușită</span>
 <h1 class="main-title">Găsește jobul potrivit</h1>
 <p class="subtitle">Platformă modernă pentru cariera ta</p>
 
@@ -186,6 +212,10 @@ body{
 </div>
 </div>
 </div>
+
+<footer>
+  <span>JOBPORTAL</span> &middot; platformă construită pentru candidați &amp; companii tech
+</footer>
 
 </body>
 </html>

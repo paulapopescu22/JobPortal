@@ -2,45 +2,50 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Signup Form</title>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign Up · JobPortal</title>
   <link rel="stylesheet" href="/css/style.css">
   <link rel="icon" type="image/png" href="/images/favicon.png">
 
   <script src="/js/signup.js" defer></script>
 </head>
 <body>
+  <div class="brand-panel">
+    <div class="brand-logo">JOBPORTAL</div>
+    <p class="brand-tagline">Alătură-te unei platforme moderne pentru candidați și companii tech.</p>
+  </div>
+
+  <div class="form-panel">
   <section>
-    <form action="/req/signup" method="post">
+
+    <form action="/req/signup" method="post" autocomplete="off">
       <h1>Sign Up</h1>
-        <div class="inputbox">
-            <ion-icon name="person-outline"></ion-icon>
-            <input type="text" id= "username" name="username" required>
-            <label for="">Name</label>
-        </div>
-        <div class="inputbox">
-            <ion-icon name="mail-outline"></ion-icon>
-            <input type="email" id="email" name="email" required>
-            <label for="">Email</label>
-        </div>
-        
-        <div class="inputbox">
-            <ion-icon name="lock-closed-outline"></ion-icon>
-            <input type="password" id="password" name="password" required>
-            <label for="">Password</label>
-        </div>  
-        <div class="inputbox">
-          <ion-icon name="lock-closed-outline"></ion-icon>
-          <input type="password" id="passwordcon" name="passwordcon" required>
-          <label for="">Confirm Password</label>
-      </div>  
-        <button id= "submit" type="submit">Sign Up</button>
+      <p>Completează datele pentru a-ți crea profilul</p>
+
+      <div class="inputbox">
+        <input type="text" id="username" name="username" autocomplete="off" required>
+        <label for="username">Name</label>
+      </div>
+      <div class="inputbox">
+        <input type="email" id="email" name="email" autocomplete="off" required>
+        <label for="email">Email</label>
+      </div>
+
+      <div class="inputbox">
+        <input type="password" id="password" name="password" autocomplete="new-password" required>
+        <label for="password">Password</label>
+      </div>
+      <div class="inputbox">
+        <input type="password" id="passwordcon" name="passwordcon" autocomplete="new-password" required>
+        <label for="passwordcon">Confirm Password</label>
+      </div>
+      <button id="submit" type="submit">Sign Up</button>
       <div class="register">
-   <p>Already have an account?<a href="/req/signup"> Login</a></p></p>
+        <p>Already have an account?<a href="/req/login"> Login</a></p>
       </div>
     </form>
   </section>
+  </div>
 </body>
 </html>
 <script>
@@ -55,7 +60,7 @@
       email,
       password
     }
-    
+
     if(password == confirmPassword){
       const jsonData = JSON.stringify(data);
       fetch('/req/signup', {
@@ -72,8 +77,8 @@
         //xs}
       })
     }
-    
+
   })
 
-  
+
 </script>
