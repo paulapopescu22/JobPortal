@@ -10,9 +10,9 @@
   <script src="/js/signup.js" defer></script>
 </head>
 <body>
+  <div class="auth-layout">
   <div class="brand-panel">
     <div class="brand-logo">JOBPORTAL</div>
-    <p class="brand-tagline">Alătură-te unei platforme moderne pentru candidați și companii tech.</p>
   </div>
 
   <div class="form-panel">
@@ -20,7 +20,12 @@
 
     <form action="/req/signup" method="post" autocomplete="off">
       <h1>Sign Up</h1>
-      <p>Completează datele pentru a-ți crea profilul</p>
+
+      <div class="role-toggle">
+        <button type="button" class="role-btn active" id="roleCandidat" data-role="CANDIDAT">Candidate</button>
+        <button type="button" class="role-btn" id="roleCompanie" data-role="COMPANIE">Company</button>
+      </div>
+      <input type="hidden" id="role" name="role" value="CANDIDAT">
 
       <div class="inputbox">
         <input type="text" id="username" name="username" autocomplete="off" required>
@@ -46,19 +51,42 @@
     </form>
   </section>
   </div>
+  </div>
+
+  <footer class="site-footer">
+  <div class="footer-brand">JOBPORTAL</div>
+  <div class="footer-tagline">a platform built for candidates &amp; tech companies</div>
+  <div class="footer-links">
+  <a href="/terms">Terms &amp; Conditions</a>
+  <a href="/privacy">Privacy Policy</a>
+  <a href="/homePage">Home</a>
+  <a href="/viewAllJobs">Jobs</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 JobPortal. All rights reserved.</div>
+  </footer>
 </body>
 </html>
 <script>
+  document.querySelectorAll('.role-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.role-btn').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById('role').value = btn.getAttribute('data-role');
+    });
+  });
+
   const submitButttom = document.getElementById("submit");
   submitButttom.addEventListener('click',()=>{
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('passwordcon').value;
     const email = document.getElementById('email').value;
+    const role = document.getElementById('role').value;
     const data ={
       username,
       email,
-      password
+      password,
+      role
     }
 
     if(password == confirmPassword){

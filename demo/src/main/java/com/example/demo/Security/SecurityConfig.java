@@ -50,7 +50,7 @@ public class SecurityConfig {
             .permitAll()
         )
         .authorizeHttpRequests(auth -> auth
-            .requestMatchers("/", "/homePage", "/addJob", "/viewAllJobs", "/req/**", "/css/**", "/js/**").permitAll()
+            .requestMatchers("/", "/homePage", "/addJob", "/viewAllJobs", "/terms", "/privacy", "/req/**", "/css/**", "/js/**", "/images/**", "/WEB-INF/**").permitAll()
             .anyRequest().authenticated()
         )
         .logout(logout -> logout.permitAll())

@@ -1,0 +1,55 @@
+<style>
+.site-footer{
+    max-width:1140px;
+    margin:70px auto 0;
+    padding:28px 24px 32px;
+    text-align:center;
+    color:#94a3b8;
+    font-size:0.85rem;
+    border-top:1px solid #e2e8f0;
+}
+.site-footer .footer-brand{
+    font-family:'Poppins',sans-serif;
+    color:#1e293b;
+    font-weight:700;
+    font-size:1rem;
+    letter-spacing:0.5px;
+    margin-bottom:8px;
+}
+.site-footer .footer-tagline{
+    margin-bottom:14px;
+}
+.site-footer .footer-links{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:14px;
+}
+.site-footer .footer-links a{
+    color:#64748b;
+    text-decoration:none;
+    font-weight:600;
+    font-size:0.82rem;
+}
+.site-footer .footer-links a:hover{
+    color:#1e293b;
+    text-decoration:underline;
+}
+.site-footer .footer-copy{
+    color:#94a3b8;
+    font-size:0.78rem;
+}
+</style>
+
+<footer class="site-footer">
+<div class="footer-brand">JOBPORTAL</div>
+<div class="footer-tagline">a platform built for candidates &amp; tech companies</div>
+<div class="footer-links">
+<a href="/terms">Terms &amp; Conditions</a>
+<a href="/privacy">Privacy Policy</a>
+<a href="/homePage">Home</a>
+<a href="/viewAllJobs">Jobs</a>
+</div>
+<div class="footer-copy">&copy; 2026 JobPortal. All rights reserved.</div>
+</footer>

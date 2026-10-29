@@ -17,7 +17,8 @@ public class MyAppUser {
     private String password;
     private String verficationToken;
     private boolean isVerified;
-    
+    private String role;
+
     @Column(name = "reset_token")
     private String resetToken;
     
@@ -63,7 +64,12 @@ public class MyAppUser {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    
-    
+
+    public String getRole() {
+        return role;
+    }
+    public void setRole(String role) {
+        this.role = role;
+    }
+
 }

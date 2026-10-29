@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -41,9 +41,9 @@ input:-webkit-autofill:active {
 }
 
 :root {
-  --accent: #3b82f6;
-  --accent-2: #60a5fa;
-  --accent-deep: #1d4ed8;
+  --accent: #1e293b;
+  --accent-2: #64748b;
+  --accent-deep: #0f172a;
 }
 
 html, body {
@@ -52,8 +52,14 @@ html, body {
 
 body {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
-  background: #f1f5f9;
+  background: #e2e8f0;
+}
+
+.auth-layout {
+  flex: 1;
+  display: flex;
 }
 
 /* ===== LEFT PANEL ===== */
@@ -68,18 +74,11 @@ body {
 }
 
 .brand-logo {
+  font-family: 'Poppins', sans-serif;
   font-weight: 700;
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
+  font-size: 2.75rem;
+  letter-spacing: 1px;
   color: #ffffff;
-  margin-bottom: 0.75rem;
-}
-
-.brand-tagline {
-  color: #dbeafe;
-  font-size: 0.9rem;
-  text-align: center;
-  max-width: 260px;
 }
 
 /* ===== RIGHT PANEL ===== */
@@ -97,7 +96,8 @@ section {
   max-width: 380px;
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 16px;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 8px 24px rgba(15,23,42,0.06);
   padding: 2.5rem 2.25rem;
 }
 
@@ -115,14 +115,37 @@ h1 {
   font-size: 1.7rem;
   color: #0f172a;
   text-align: center;
-  margin-bottom: 0.4rem;
+  margin-bottom: 1.8rem;
 }
 
-form > p {
-  text-align: center;
+/* ===== ROLE TOGGLE (Candidat / Companie) ===== */
+.role-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.6rem;
+}
+
+.role-btn {
+  flex: 1;
+  width: auto;
+  height: 40px;
+  margin-top: 0;
+  border-radius: 999px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   color: #64748b;
   font-size: 0.85rem;
-  margin-bottom: 1.6rem;
+}
+
+.role-btn:hover {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.role-btn.active {
+  background: #0f172a;
+  border-color: transparent;
+  color: #ffffff;
 }
 
 /* ===== INPUT ===== */
@@ -180,8 +203,8 @@ input:valid ~ label {
 button {
   width: 100%;
   height: 44px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent-deep), var(--accent));
+  border-radius: 999px;
+  background: #0f172a;
   border: none;
   outline: none;
   cursor: pointer;
@@ -194,7 +217,7 @@ button {
 }
 
 button:hover {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  background: #1e293b;
 }
 
 /* ===== REGISTER / FOOTER LINKS ===== */
@@ -228,14 +251,55 @@ button:hover {
 }
 
 @media (max-width: 800px) {
-  body {
+  .auth-layout {
     flex-direction: column;
   }
   .brand-panel {
     flex: none;
     padding: 2rem;
   }
-  .brand-tagline {
-    display: none;
-  }
+}
+
+/* ===== FOOTER ===== */
+.site-footer{
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 24px 24px 28px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  border-top: 1px solid #cbd5e1;
+}
+.site-footer .footer-brand{
+  font-family: 'Poppins', sans-serif;
+  color: #1e293b;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+.site-footer .footer-tagline{
+  margin-bottom: 14px;
+}
+.site-footer .footer-links{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+.site-footer .footer-links a{
+  color: #64748b;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.82rem;
+}
+.site-footer .footer-links a:hover{
+  color: #1e293b;
+  text-decoration: underline;
+}
+.site-footer .footer-copy{
+  color: #94a3b8;
+  font-size: 0.78rem;
 }

@@ -54,16 +54,19 @@ public class ProfileController {
             @RequestParam(value = "certifications", required = false) String certifications,
             @RequestParam(value = "photo", required = false) MultipartFile photo,
             @RequestParam(value = "cv", required = false) MultipartFile cv,
+            @RequestParam(value = "coverLetter", required = false) MultipartFile coverLetter,
+            @RequestParam(value = "certificateFile", required = false) MultipartFile certificateFile,
             Principal principal) throws IOException {
 
         UserProfile profile = profileRepository.findByUsername(principal.getName())
                 .orElseGet(UserProfile::new);
         profile.setUsername(principal.getName());
-        profile.setSkills(skills);
-        profile.setLanguages(languages);
-        profile.setEducation(education);
-        profile.setExperience(experience);
-        profile.setCertifications(certifications);
+
+        if (skills != null) profile.setSkills(skills);
+        if (languages != null) profile.setLanguages(languages);
+        if (education != null) profile.setEducation(education);
+        if (experience != null) profile.setExperience(experience);
+        if (certifications != null) profile.setCertifications(certifications);
 
         if (photo != null && !photo.isEmpty()) {
             profile.setPhotoPath(storeFile(photo, "photo"));
@@ -71,6 +74,14 @@ public class ProfileController {
         if (cv != null && !cv.isEmpty()) {
             profile.setCvPath(storeFile(cv, "cv"));
             profile.setCvOriginalName(cv.getOriginalFilename());
+        }
+        if (coverLetter != null && !coverLetter.isEmpty()) {
+            profile.setCoverLetterPath(storeFile(coverLetter, "coverletter"));
+            profile.setCoverLetterOriginalName(coverLetter.getOriginalFilename());
+        }
+        if (certificateFile != null && !certificateFile.isEmpty()) {
+            profile.setCertificatePath(storeFile(certificateFile, "certificate"));
+            profile.setCertificateOriginalName(certificateFile.getOriginalFilename());
         }
 
         profileRepository.save(profile);
