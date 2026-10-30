@@ -226,6 +226,13 @@ body{
     color:#ffffff;
     border-bottom-right-radius:4px;
 }
+.msg-status{
+    align-self:flex-end;
+    font-size:0.72rem;
+    color:#94a3b8;
+    margin-top:-4px;
+    margin-right:6px;
+}
 .chat-input-bar{
     display:flex;
     gap:10px;
@@ -296,9 +303,6 @@ JOBPORTAL</a>
 <a class="nav-btn" href="/searchCandidates">Network</a>
 </c:if>
 <a class="nav-btn" href="/messages">Messaging</a>
-<c:if test="${userRole == 'COMPANIE'}">
-<a class="nav-btn nav-btn-primary" href="/addJob">Add Job</a>
-</c:if>
 </div>
 </div>
 </nav>
@@ -379,6 +383,7 @@ JOBPORTAL</a>
 <div class="msg-bubble msg-sent">Hi Alex, thanks for reaching out! Could you tell me more about your experience with Spring Boot?</div>
 <div class="msg-bubble msg-received">Sure, I've worked with Spring Boot for about 3 years, mainly on REST APIs and microservices.</div>
 <div class="msg-bubble msg-sent">That sounds great. Are you available for a quick call next week?</div>
+<div class="msg-status">Seen</div>
 <div class="msg-bubble msg-received">Thanks for reaching out! I'm available for an interview next week.</div>
 </div>
 

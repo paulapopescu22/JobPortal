@@ -152,9 +152,6 @@ JOBPORTAL</a>
 <a class="nav-btn" href="/searchCandidates">Network</a>
 </c:if>
 <a class="nav-btn" href="/messages">Messaging</a>
-<c:if test="${userRole == 'COMPANIE'}">
-<a class="nav-btn nav-btn-primary" href="/addJob">Add Job</a>
-</c:if>
 </div>
 </div>
 </nav>
